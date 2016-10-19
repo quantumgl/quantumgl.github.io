@@ -5,9 +5,33 @@
     <meta charset="UTF-8">
     <title>CinemaTix</title>
 </head>
+
 <body>
     <div id="logo">
         <img src="final.png" alt="LOGO" style="width:397px;height:147px;">
     </div>
+
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+    <ul id="menu">
+        <li><a href="#">Home</a></li>
+        <li>
+            <a href="#">Entradas ￬</a>
+            <ul class="hidden">
+                <li><a href="#">Seleccionar Fecha</a></li>
+                <li><a href="#">Seleccionar Película</a></li>
+                <li><a href="#">Seleccionar Centro</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Gerente ￬</a>
+            <ul class="hidden">
+                <li><a href="#">Contraseña</a></li>
+            </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
 </body>
+
 </html>
