@@ -5,7 +5,25 @@
     <meta charset="UTF-8">
     <title>eTicket</title>
     <style>
+        div.background {
+            background: url(klematis.jpg) repeat;
+            border: 2px solid black;
+        }
 
+        div.transbox {
+            margin: 30px;
+            margin-top: 10%;
+            background-color: #ffffff;
+            border: 1px solid black;
+            opacity: 0.6;
+            filter: alpha(opacity=60); /* For IE8 and earlier */
+        }
+
+        div.transbox p {
+            margin: 5%;
+            font-weight: bold;
+            color: #000000;
+        }
         /* The Modal (background) */
         .modal {
             display: none; /* Hidden by default */
@@ -297,237 +315,235 @@
 </head>
 
 <body>
-    <div id="logo" class="row">
-        <img src="finalTrans.png" alt="LOGO" style="width:397px;height:147px;">
+<div id="logo" class="row">
+    <img src="finalTrans.png" alt="LOGO" style="width:397px;height:147px;">
+</div>
+
+<div id="nav" type="block" class="block">
+    <label for="show-menu" class="show-menu">Show Menu</label>
+    <input type="checkbox" id="show-menu" role="button">
+    <ul id="menu">
+        <li><a href="index.html">Home</a></li>
+        <li>
+            <a href="#">Entradas ￬</a>
+            <ul class="hidden">
+                <li>
+                    <button id="myBtn">Seleccionar Fecha</button>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">Gerente ￬</a>
+            <ul class="hidden">
+                <button id="myBtnGerente">Ingresar Contraseña</button>
+            </ul>
+        </li>
+        <li><a href="aboutPage.html">About</a></li>
+        <li><a href="#.html">Contactar</a>
+            <ul class="hidden">
+                <li>
+                    <button id="myBtnContact">Déjanos un Mensaje</button>
+                </li>
+            </ul></li>
+    </ul>
+</div>
+
+
+
+<div class="background">
+    <div class="transbox">
+        <p>eTicket es una compañía.</p>
     </div>
+</div>
 
-    <div id="nav" type="block" class="block">
-        <label for="show-menu" class="show-menu">Show Menu</label>
-        <input type="checkbox" id="show-menu" role="button">
-        <ul id="menu">
-            <li><a href="index.html">Home</a></li>
-            <li>
-                <a href="#">Entradas ￬</a>
-                <ul class="hidden">
-                    <li>
-                        <button id="myBtn">Seleccionar Fecha</button>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#">Gerente ￬</a>
-                <ul class="hidden">
-                    <button id="myBtnGerente">Ingresar Contraseña</button>
-                </ul>
-            </li>
-            <li><a href="aboutPage.html">About</a></li>
-            <li><a href="#.html">Contactar</a>
-                <ul class="hidden">
-                    <li>
-                        <button id="myBtnContact">Déjanos un Mensaje</button>
-                    </li>
-                </ul></li>
-        </ul>
-    </div>
+<!-- Fecha Modal -->
+<div id="myModal" class="modal">
 
-
-    <div id="nowShowing" class="row">
-        <div class="col-xs-9">.col-xs-9</div>
-          <img src="now-showing-banner.png" style="width:350px;height:60px;">
-        <div class="col-xs-4">.col-xs-4<br></div>
-            <img src="laberinto.jpg" style="width:340px;height:500px;">
-        <div class="col-xs-6">.col-xs-6<br></div>
-            <img src="thething.png" style="width:340px;height:500px;">
-    </div>
-
-    <!-- Fecha Modal -->
-    <div id="myModal" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="close">×</span>
-                <h2>Indique Fecha</h2>
-            </div>
-            <div class="modal-body">
-                <div class='child'>
-                    <input type='date' name='dob[]' value='<?php echo $dob?>'>
-                    <div class='form-control datedisplay'>
-                        <?php echo date('m/d/Y',strtotime($dob))?>
-                    </div>
-                    <input type='hidden' value='<?php echo $id?>' name='id[]'>
-                    <div class='input-group-addon'>
-                        <span class='cursor glyphicon glyphicon-remove remove_child_dob'></span>
-                    </div>
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">×</span>
+            <h2>Indique Fecha</h2>
+        </div>
+        <div class="modal-body">
+            <div class='child'>
+                <input type='date' name='dob[]' value='<?php echo $dob?>'>
+                <div class='form-control datedisplay'>
+                    <?php echo date('m/d/Y',strtotime($dob))?>
+                </div>
+                <input type='hidden' value='<?php echo $id?>' name='id[]'>
+                <div class='input-group-addon'>
+                    <span class='cursor glyphicon glyphicon-remove remove_child_dob'></span>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button onclick="peliculas()" id="myBtnGo">Ver películas</button>
-            </div>
         </div>
-
-    </div>
-
-    </div>
-
-    <!-- Contact Modal -->
-    <div id="myModalContact" class="modal">
-
-        <!-- Modal content -->
-        <div class="modal-content">
-            <div class="modal-header">
-                <span class="closeContact">×</span>
-                <h2>Contactar</h2>
-            </div>
-            <div class="modal-body">
-                <form id="form" method='post'>
-                    Nombre: <input type='text' name='name' id='name' /><br />
-
-                    Email: <input type='text' name='email' id='email' /><br />
-
-                    Mensaje:<br />
-                    <textarea name='comment' id='comment'></textarea><br />
-
-                    <input type='hidden' name='article' id='article'  value='<? echo $_GET["id"]; ?>' />
-
-                    <input type='submit' value='Submit' />
-                </form>
-
-            </div>
-            <div class="modal-footer">
-                <h3></h3>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Contact Gerente -->
-    <div id="myModalGerente" class="modal">
-
-        <!-- Modal Gerente -->
-        <div class="modal-contentGerente">
-            <div class="modal-headerGerente">
-                <span class="closeGerente">×</span>
-                <h2>Ingrese Contraseña</h2>
-            </div>
-            <div class="modal-bodyGerente">
-                <form id="form" method='post'>
-                    Contraseña: <input type='password' size="25" /><br />
-                </form>
-
-            </div>
-            <div class="modal-footerGerente">
-                <h3><button onclick="gerente()" id="myBtnGerente">Entrar</button></h3>
-            </div>
+        <div class="modal-footer">
+            <button onclick="peliculas()" id="myBtnGo">Ver películas</button>
         </div>
     </div>
 
+</div>
+
+</div>
+
+<!-- Contact Modal -->
+<div id="myModalContact" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="closeContact">×</span>
+            <h2>Contactar</h2>
+        </div>
+        <div class="modal-body">
+            <form id="form" method='post'>
+                Nombre: <input type='text' name='name' id='name' /><br />
+
+                Email: <input type='text' name='email' id='email' /><br />
+
+                Mensaje:<br />
+                <textarea name='comment' id='comment'></textarea><br />
+
+                <input type='hidden' name='article' id='article'  value='<? echo $_GET["id"]; ?>' />
+
+                <input type='submit' value='Submit' />
+            </form>
+
+        </div>
+        <div class="modal-footer">
+            <h3></h3>
+        </div>
     </div>
 
-    <!-- JAVA SCRIPTS -->
+</div>
 
-    <script>
-        //ENTRADAS//////////////
-        ////////////////////////
-        // Get the modal
-        var modal = document.getElementById('myModal');
+<!-- Contact Gerente -->
+<div id="myModalGerente" class="modal">
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("myBtn");
+    <!-- Modal Gerente -->
+    <div class="modal-contentGerente">
+        <div class="modal-headerGerente">
+            <span class="closeGerente">×</span>
+            <h2>Ingrese Contraseña</h2>
+        </div>
+        <div class="modal-bodyGerente">
+            <form id="form" method='post'>
+                Contraseña: <input type='password' size="25" /><br />
+            </form>
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
+        </div>
+        <div class="modal-footerGerente">
+            <h3><button onclick="gerente()" id="myBtnGerente">Entrar</button></h3>
+        </div>
+    </div>
+</div>
 
-        // When the user clicks the button, open the modal
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
+</div>
 
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
+<!-- JAVA SCRIPTS -->
+
+<script>
+    //ENTRADAS//////////////
+    ////////////////////////
+    // Get the modal
+    var modal = document.getElementById('myModal');
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
             modal.style.display = "none";
         }
+    }
 
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
+    // CONTACT/////////////
+    ///////////////////////
+    // Get the modal
+    var modalContact = document.getElementById('myModalContact');
 
-        // CONTACT/////////////
-        ///////////////////////
-        // Get the modal
-        var modalContact = document.getElementById('myModalContact');
+    // Get the button that opens the modal
+    var btnContact = document.getElementById("myBtnContact");
 
-        // Get the button that opens the modal
-        var btnContact = document.getElementById("myBtnContact");
+    // Get the <span> element that closes the modal
+    var spanContact = document.getElementsByClassName("closeContact")[0];
 
-        // Get the <span> element that closes the modal
-        var spanContact = document.getElementsByClassName("closeContact")[0];
+    // When the user clicks the button, open the modal
+    btnContact.onclick = function() {
+        modalContact.style.display = "block";
+    }
 
-        // When the user clicks the button, open the modal
-        btnContact.onclick = function() {
-            modalContact.style.display = "block";
-        }
+    // When the user clicks on <span> (x), close the modal
+    spanContact.onclick = function() {
+        modalContact.style.display = "none";
+    }
 
-        // When the user clicks on <span> (x), close the modal
-        spanContact.onclick = function() {
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modalContact) {
             modalContact.style.display = "none";
         }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modalContact) {
-                modalContact.style.display = "none";
-            }
-        }
+    }
 
 
 
-        // GERENTE ////////////////
-        ///////////////////////////
-        // Get the modal
-        var modalGerente = document.getElementById('myModalGerente');
+    // GERENTE ////////////////
+    ///////////////////////////
+    // Get the modal
+    var modalGerente = document.getElementById('myModalGerente');
 
-        // Get the button that opens the modal
-        var btnGerente = document.getElementById("myBtnGerente");
+    // Get the button that opens the modal
+    var btnGerente = document.getElementById("myBtnGerente");
 
-        // Get the <span> element that closes the modal
-        var spanGerente = document.getElementsByClassName("closeGerente")[0];
+    // Get the <span> element that closes the modal
+    var spanGerente = document.getElementsByClassName("closeGerente")[0];
 
-        // When the user clicks the button, open the modal
-        btnGerente.onclick = function() {
-            modalGerente.style.display = "block";
-        }
+    // When the user clicks the button, open the modal
+    btnGerente.onclick = function() {
+        modalGerente.style.display = "block";
+    }
 
-        // When the user clicks on <span> (x), close the modal
-        spanGerente.onclick = function() {
+    // When the user clicks on <span> (x), close the modal
+    spanGerente.onclick = function() {
+        modalGerente.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modalGerente) {
             modalGerente.style.display = "none";
         }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modalGerente) {
-                modalGerente.style.display = "none";
-            }
-        }
+    }
 
 
-        $(function()
+    $(function()
+    {
+        $(document).on('click','.datedisplay',function()
         {
-            $(document).on('click','.datedisplay',function()
-            {
-                $(this).siblings('[type="date"]').removeClass('hidden').focus().click();
-                $(this).remove();
-            });
+            $(this).siblings('[type="date"]').removeClass('hidden').focus().click();
+            $(this).remove();
         });
+    });
 
 
-        function peliculas() {
+    function peliculas() {
 
-        }
-    </script>
+    }
+</script>
 
 
 </body>
