@@ -8,7 +8,13 @@ h1 {
 
 #logo {
     display: block;
-    margin: auto;
+    margin-left: 37%;
+    align-items: center;
+}
+
+#nav {
+    display: block;
+    margin-left: 30%;
     align-items: center;
 }
 
@@ -44,7 +50,7 @@ li a {
 
 /*Hover state for top level links*/
 li:hover a {
-    background: #19c589;
+    background: orange;
 }
 
 /*Style for dropdown links*/
@@ -57,7 +63,7 @@ li:hover ul a {
 
 /*Hover state for dropdown links*/
 li:hover ul a:hover {
-    background: #19c589;
+    background: orange;
     color: #fff;
 }
 
@@ -126,4 +132,94 @@ input[type=checkbox]:checked ~ #menu{
     .show-menu {
         display:block;
     }
+
+}
+
+#nowShowing {
+    display: block;
+    margin-top: 10%;
+    margin-left: 40%;
+}
+
+.boxed {
+    border: 5px orangered ;
+    background: lightgray;
+    margin-top: 10%;
+}
+#form {
+    margin-left: 2%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+#myBtn {
+    background-color: darkgrey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#myBtnContact {
+    background-color: darkgrey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+#myBtnGo {
+    background-color: darkgrey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    ;
+}
+
+#myBtnGerente {
+    background-color: darkgrey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+;
+}
+
+#myBtnGerenteIr {
+    background-color: darkgrey;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+;
+}
+#comment {
+    min-height:20px;
+    min-width: 400px;
+    margin-left: 2%;
 }

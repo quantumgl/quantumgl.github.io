@@ -4,34 +4,531 @@
     <link rel="stylesheet" href="styles.css">
     <meta charset="UTF-8">
     <title>CinemaTix</title>
+    <style>
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 300px; /* Location of the box */
+            margin-left: 30%;
+            margin-right: 30%;
+            left: 0;
+            top: 0;
+            width: 50%; /* Full width */
+            height: 40%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: gray;
+            color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: dimgray;
+            color: white;
+        }
+
+        /* The Modal (background) */
+        .modalContact {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 300px; /* Location of the box */
+            margin-left: 30%;
+            margin-right: 30%;
+            left: 0;
+            top: 0;
+            width: 50%; /* Full width */
+            height: 40%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-contentContact {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .closeContact {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .closeContact:hover,
+        .closeContact:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-headerContact {
+            padding: 2px 16px;
+            background-color: gray;
+            color: white;
+        }
+
+        .modal-bodyContact {padding: 2px 16px;}
+
+        .modal-footerContact {
+            padding: 2px 16px;
+            background-color: dimgray;
+            color: white;
+        }
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 300px; /* Location of the box */
+            margin-left: 30%;
+            margin-right: 30%;
+            left: 0;
+            top: 0;
+            width: 50%; /* Full width */
+            height: 40%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .close {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-header {
+            padding: 2px 16px;
+            background-color: gray;
+            color: white;
+        }
+
+        .modal-body {padding: 2px 16px;}
+
+        .modal-footer {
+            padding: 2px 16px;
+            background-color: dimgray;
+            color: white;
+        }
+
+        /* The ModalGerente (background) */
+        .modalGerente  {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 300px; /* Location of the box */
+            margin-left: 30%;
+            margin-right: 30%;
+            left: 0;
+            top: 0;
+            width: 50%; /* Full width */
+            height: 40%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-contentGerente  {
+            position: relative;
+            background-color: #fefefe;
+            margin: auto;
+            padding: 0;
+            border: 1px solid #888;
+            width: 80%;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+            -webkit-animation-name: animatetop;
+            -webkit-animation-duration: 0.4s;
+            animation-name: animatetop;
+            animation-duration: 0.4s
+        }
+
+        /* Add Animation */
+        @-webkit-keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        @keyframes animatetop {
+            from {top:-300px; opacity:0}
+            to {top:0; opacity:1}
+        }
+
+        /* The Close Button */
+        .closeGerente {
+            color: white;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .closeGerente:hover,
+        .closeGerente:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-headerGerente {
+            padding: 2px 16px;
+            background-color: gray;
+            color: white;
+        }
+
+        .modal-bodyGerente {padding: 2px 16px;}
+
+        .modal-footerGerente {
+            padding: 2px 16px;
+            background-color: dimgray;
+            color: white;
+        }
+
+    </style>
 </head>
 
 <body>
-    <div id="logo">
-        <img src="final.png" alt="LOGO" style="width:397px;height:147px;">
+    <div id="logo" class="row">
+        <img src="finalTrans.png" alt="LOGO" style="width:397px;height:147px;">
     </div>
 
-    <label for="show-menu" class="show-menu">Show Menu</label>
-    <input type="checkbox" id="show-menu" role="button">
-    <ul id="menu">
-        <li><a href="#">Home</a></li>
-        <li>
-            <a href="#">Entradas ￬</a>
-            <ul class="hidden">
-                <li><a href="#">Seleccionar Fecha</a></li>
-                <li><a href="#">Seleccionar Película</a></li>
-                <li><a href="#">Seleccionar Centro</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#">Gerente ￬</a>
-            <ul class="hidden">
-                <li><a href="#">Contraseña</a></li>
-            </ul>
-        </li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
-    </ul>
+    <div id="nav" type="block" class="block">
+        <label for="show-menu" class="show-menu">Show Menu</label>
+        <input type="checkbox" id="show-menu" role="button">
+        <ul id="menu">
+            <li><a href="index.html">Home</a></li>
+            <li>
+                <a href="#">Entradas ￬</a>
+                <ul class="hidden">
+                    <li>
+                        <button id="myBtn">Seleccionar Fecha</button>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Gerente ￬</a>
+                <ul class="hidden">
+                    <button id="myBtnGerente">Ingresar Contraseña</button>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#.html">Contactar</a>
+                <ul class="hidden">
+                    <li>
+                        <button id="myBtnContact">Déjanos un Mensaje</button>
+                    </li>
+                </ul></li>
+        </ul>
+    </div>
+
+
+    <div id="nowShowing" class="row">
+        <div class="col-xs-9">.col-xs-9</div>
+          <img src="now-showing-banner.png" style="width:350px;height:60px;">
+        <div class="col-xs-4">.col-xs-4<br></div>
+            <img src="laberinto.jpg" style="width:340px;height:500px;">
+        <div class="col-xs-6">.col-xs-6<br></div>
+            <img src="thething.png" style="width:340px;height:500px;">
+    </div>
+
+    <!-- Fecha Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">×</span>
+                <h2>Indique Fecha</h2>
+            </div>
+            <div class="modal-body">
+                <div class='child'>
+                    <input type='date' name='dob[]' value='<?php echo $dob?>'>
+                    <div class='form-control datedisplay'>
+                        <?php echo date('m/d/Y',strtotime($dob))?>
+                    </div>
+                    <input type='hidden' value='<?php echo $id?>' name='id[]'>
+                    <div class='input-group-addon'>
+                        <span class='cursor glyphicon glyphicon-remove remove_child_dob'></span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button onclick="peliculas()" id="myBtnGo">Ver películas</button>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="myModalContact" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="closeContact">×</span>
+                <h2>Contactar</h2>
+            </div>
+            <div class="modal-body">
+                <form id="form" method='post'>
+                    Nombre: <input type='text' name='name' id='name' /><br />
+
+                    Email: <input type='text' name='email' id='email' /><br />
+
+                    Mensaje:<br />
+                    <textarea name='comment' id='comment'></textarea><br />
+
+                    <input type='hidden' name='article' id='article'  value='<? echo $_GET["id"]; ?>' />
+
+                    <input type='submit' value='Submit' />
+                </form>
+
+            </div>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Contact Gerente -->
+    <div id="myModalGerente" class="modal">
+
+        <!-- Modal Gerente -->
+        <div class="modal-contentGerente">
+            <div class="modal-headerGerente">
+                <span class="closeGerente">×</span>
+                <h2>Ingrese Contraseña</h2>
+            </div>
+            <div class="modal-bodyGerente">
+                <form id="form" method='post'>
+                    Contraseña: <input type='password' size="25" /><br />
+                </form>
+
+            </div>
+            <div class="modal-footerGerente">
+                <h3><button onclick="gerente()" id="myBtnGerente">Entrar</button></h3>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- JAVA SCRIPTS -->
+
+    <script>
+        //ENTRADAS//////////////
+        ////////////////////////
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // CONTACT/////////////
+        ///////////////////////
+        // Get the modal
+        var modalContact = document.getElementById('myModalContact');
+
+        // Get the button that opens the modal
+        var btnContact = document.getElementById("myBtnContact");
+
+        // Get the <span> element that closes the modal
+        var spanContact = document.getElementsByClassName("closeContact")[0];
+
+        // When the user clicks the button, open the modal
+        btnContact.onclick = function() {
+            modalContact.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        spanContact.onclick = function() {
+            modalContact.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalContact) {
+                modalContact.style.display = "none";
+            }
+        }
+
+
+
+        // GERENTE ////////////////
+        ///////////////////////////
+        // Get the modal
+        var modalGerente = document.getElementById('myModalGerente');
+
+        // Get the button that opens the modal
+        var btnGerente = document.getElementById("myBtnGerente");
+
+        // Get the <span> element that closes the modal
+        var spanGerente = document.getElementsByClassName("closeGerente")[0];
+
+        // When the user clicks the button, open the modal
+        btnGerente.onclick = function() {
+            modalGerente.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        spanGerente.onclick = function() {
+            modalGerente.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modalGerente) {
+                modalGerente.style.display = "none";
+            }
+        }
+
+
+        $(function()
+        {
+            $(document).on('click','.datedisplay',function()
+            {
+                $(this).siblings('[type="date"]').removeClass('hidden').focus().click();
+                $(this).remove();
+            });
+        });
+
+
+        function peliculas() {
+
+        }
+    </script>
+
+
 </body>
 
 </html>

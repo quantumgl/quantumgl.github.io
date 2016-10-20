@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Indique Fecha</title>
+</head>
+<body>
+
+<div class='child'>
+    <input type='date' name='dob[]' value='<?php echo $dob?>'>
+        <div class='form-control datedisplay'>
+            <?php echo date('m/d/Y',strtotime($dob))?>
+        </div>
+    <input type='hidden' value='<?php echo $id?>' name='id[]'>
+        <div class='input-group-addon'>
+            <span class='cursor glyphicon glyphicon-remove remove_child_dob'></span>
+        </div>
+</div>
+
+<script>
+    $(function()
+        {
+            $(document).on('click','.datedisplay',function()
+            {
+                $(this).siblings('[type="date"]').removeClass('hidden').focus().click();
+                $(this).remove();
+            });
+        });
+</script>
+
+</body>
+</html>
